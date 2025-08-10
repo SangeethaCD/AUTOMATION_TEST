@@ -4,7 +4,9 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js"
+    "test": "cucumber-js",
+    "test:org": "cucumber-js --tags=@organization",
+    "test:login":"cucumber-js --tags=@login" 
   },
   "keywords": [],
   "author": "",

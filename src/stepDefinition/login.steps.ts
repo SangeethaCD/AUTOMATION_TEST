@@ -1,5 +1,5 @@
 import { When, Then, Given } from "@cucumber/cucumber";
-import { navigateToUrl } from "../pageAction/LoginPage";
+import { navigateToUrl } from "../pageAction/loginPage";
 import { LoginPage } from "../stepObjects/loginDetails";
 import { page } from "../support/hooks";
 require('dotenv').config();
@@ -8,7 +8,6 @@ require('dotenv').config();
 let loginPage: LoginPage;
 
 Given('the user is on the skillsmax login page', async () => {
-
     loginPage = new LoginPage(page);
     await navigateToUrl();
 });
@@ -26,7 +25,7 @@ Then('the user should be redirected to the Organization dashboard', async () => 
 });
 
 When("the user enters a valid username and an incorrect password", async () => {
-    await loginPage.validateUser('sangeetha.sakthimurugan@crystaldelat.com', "password");
+    await loginPage.validateUser(process.env.TEST_USERNAME, "password");
     await loginPage.login();
 })
 

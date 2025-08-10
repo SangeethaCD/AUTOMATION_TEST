@@ -14,7 +14,7 @@ export class LoginPage {
   }
 
   async login() {
-    await this.page.locator("//button[text()='Login']").click();
+    await utility.clickable(this.page,"//button[text()='Login']");
   }
 
   async validateNavigation() {
