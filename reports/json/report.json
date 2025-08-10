@@ -1,0 +1,228 @@
+[
+  {
+    "description": "",
+    "elements": [
+      {
+        "description": "",
+        "id": "user-login;successful-login-with-valid-credentials",
+        "keyword": "Scenario",
+        "line": 6,
+        "name": "Successful login with valid credentials",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the skillsmax login page",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 5924023357
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 7,
+            "name": "the user enters a valid username and password",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:16"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 79084502
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 8,
+            "name": "clicks the login button",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 67972036
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 9,
+            "name": "the user should be redirected to the Organization dashboard",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:24"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 10179361349
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-login;login-with-invalid-password",
+        "keyword": "Scenario",
+        "line": 11,
+        "name": "Login with invalid password",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the skillsmax login page",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 171530137
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 12,
+            "name": "the user enters a valid username and an incorrect password",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:28"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 127311478
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 13,
+            "name": "clicks the login button",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 1460303016
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 14,
+            "name": "an error message should be displayed",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:33"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3907934
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 15,
+            "name": "the user should remain on the login page",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3599286
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      },
+      {
+        "description": "",
+        "id": "user-login;login-attempt-with-missing-fields",
+        "keyword": "Scenario",
+        "line": 17,
+        "name": "Login attempt with missing fields",
+        "steps": [
+          {
+            "arguments": [],
+            "keyword": "Given ",
+            "line": 4,
+            "name": "the user is on the skillsmax login page",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:10"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 105004321
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "When ",
+            "line": 18,
+            "name": "the user clicks the login button without entering credentials",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:41"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49914874
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 19,
+            "name": "clicks the login button",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:20"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 49122441
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "Then ",
+            "line": 20,
+            "name": "validation messages should appear for the required fields",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:45"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 17443791
+            }
+          },
+          {
+            "arguments": [],
+            "keyword": "And ",
+            "line": 21,
+            "name": "the user should remain on the login page",
+            "match": {
+              "location": "src/stepDefinition/login.steps.ts:37"
+            },
+            "result": {
+              "status": "passed",
+              "duration": 3820212
+            }
+          }
+        ],
+        "tags": [],
+        "type": "scenario"
+      }
+    ],
+    "id": "user-login",
+    "line": 1,
+    "keyword": "Feature",
+    "name": "User Login",
+    "tags": [],
+    "uri": "src/features/login.feature"
+  }
+]
