@@ -30,9 +30,15 @@ Then('the user should be prompted to upload the user creation files',async()=>{
     await userPage.creationUser();
 })
 
+When('the user clicks the "Nexts" button',async()=>{
+    await userPage.clickNextsButton();
+})
+
+
 When('the user clicks the "Confirm and Create" button',async()=>{
     await userPage.clickConfirm();
 })
+
 
 Then('the users should be successfully created',async()=>{
     await userPage.successMessage();

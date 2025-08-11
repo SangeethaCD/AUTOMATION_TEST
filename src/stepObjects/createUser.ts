@@ -22,44 +22,26 @@ export class createUser {
   }
 
   async clickNextButton() {
-     const nextButton = this.page.locator("//p[contains(text(), 'Next')]");
-
-  const maxRetries = 10;
-  const retryDelayMs = 500;
-
-  for (let attempt = 1; attempt <= maxRetries; attempt++) {
-    try {
-      await nextButton.waitFor({ state: 'visible', timeout: 5000 });
-
-      const isEnabled = await nextButton.evaluate(
-        (el) => !el.hasAttribute('disabled') && !el.classList.contains('disabled')
-      );
-      if (!isEnabled) throw new Error('Next button is disabled');
-
-      await nextButton.click();
-      return; 
-    } catch (error) {
-      if (attempt === maxRetries) throw error;
-      await this.page.waitForTimeout(retryDelayMs);
-    }
+    await utility.clickable(this.page, "//p[contains(text(), 'Next')]");
   }
+
+  async clickNextsButton(){
+    await this.page.locator('//p[text()="Next"]').click();
+    await this.page.locator('//p[text()="Next"]').click();
   }
 
   async creationUser() {
     const input = this.page.locator("//label[contains(text(), 'Organization')]/following::input[1]");
     await input.fill("MyOrg");
-
-    
     await this.page.locator("//input[@type='file']").setInputFiles('/home/Sangeetha/Documents/testing-training/assets/bulk-sample-user.csv');
   }
 
   async clickConfirm() {
-   
+    await this.page.locator('//p[text()="Next"]').click();
     await utility.clickable(this.page, "//p[contains(text(), 'Confirm & Create')]");
   }
 
   async successMessage() {
-    // Check visibility of the success message paragraph
     await utility.checkVisibility(this.page, "//p[contains(text(), 'successfully') or contains(text(), 'created')]");
   }
 }
