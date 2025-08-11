@@ -7,6 +7,7 @@
     "test": "cucumber-js --require-module ts-node/register --format json:./reports/cucumber-report.json",
     "test:org": "cucumber-js --tags=@organization --require-module ts-node/register --format json:./reports/cucumber-report.json",
     "test:login": "cucumber-js --tags=@login --require-module ts-node/register --format json:./reports/cucumber-report.json ",
+    "test:user":"cucumber-js --tags=@User --require-module ts-node/register --format json:./reports/cucumber-report.json ",
     "report": "ts-node generate-report.ts && open ./index.html"
   },
   "keywords": [],
