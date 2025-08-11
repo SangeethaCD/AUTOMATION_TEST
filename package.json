@@ -4,9 +4,10 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "cucumber-js",
-    "test:org": "cucumber-js --tags=@organization",
-    "test:login":"cucumber-js --tags=@login" 
+    "test": "cucumber-js --require-module ts-node/register --format json:./reports/cucumber-report.json",
+    "test:org": "cucumber-js --tags=@organization --require-module ts-node/register --format json:./reports/cucumber-report.json",
+    "test:login": "cucumber-js --tags=@login --require-module ts-node/register --format json:./reports/cucumber-report.json ",
+    "report": "ts-node generate-report.ts && open ./index.html"
   },
   "keywords": [],
   "author": "",
@@ -16,10 +17,12 @@
     "@types/node": "^24.2.0",
     "dotenv": "^17.2.1",
     "multiple-cucumber-html-reporter": "^3.9.3",
+    "open": "^10.2.0",
     "ts-node": "^10.9.2",
     "typescript": "^5.9.2"
   },
   "dependencies": {
-    "@cucumber/cucumber": "^12.1.0"
+    "@cucumber/cucumber": "^12.1.0",
+    "os": "^0.1.2"
   }
 }

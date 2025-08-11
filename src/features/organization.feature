@@ -19,13 +19,13 @@ Feature: Organization Creation and Management
       | City             | Los Angeles   |
       | AssessmentLevel  | Graded        |
     And I click the "Create" button
-    Then I should see a confirmation toaster message
+    Then I should see my organization in organization table
 
   @organization 
   Scenario: Validation of mandatory fields
     When I submit the organization creation form without filling mandatory fields
     Then I should see validation messages for:
-      | Field            | Message                                     |
+
       | OrganizationName | Organisation Name is required               |
       | Address          | Address is required                         |
       | Country          | Country is required                         |
