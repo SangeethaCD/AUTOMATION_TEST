@@ -27,13 +27,16 @@ export class createUser {
 
   async clickNextsButton(){
     await this.page.locator('//p[text()="Next"]').click();
-    await this.page.locator('//p[text()="Next"]').click();
   }
 
   async creationUser() {
-    const input = this.page.locator("//label[contains(text(), 'Organization')]/following::input[1]");
-    await input.fill("MyOrg");
+    await this.page.locator('//*[@id="organization-select"]').click();
+    await this.page.locator('//*[@id="organization-select-option-15"]').click();
     await this.page.locator("//input[@type='file']").setInputFiles('/home/Sangeetha/Documents/testing-training/assets/bulk-sample-user.csv');
+    const nextButton =this.page.locator('button:has-text("Next")');
+    await nextButton.waitFor({ state: 'visible' });
+    await nextButton.click();
+    
   }
 
   async clickConfirm() {
