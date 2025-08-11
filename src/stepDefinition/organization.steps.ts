@@ -1,4 +1,4 @@
-import { Given, When,Then } from "@cucumber/cucumber";
+import { Given, When,Then, DataTable } from "@cucumber/cucumber";
 import { navigateToPage } from "../pageAction/organizationPage";
 import { OrganizationPage } from "../stepObjects/organizationPage";
 import { page } from "../support/hooks";
@@ -35,3 +35,11 @@ Then('I should see a confirmation toaster message',async()=>{
     await organizationPage.showCreationMessage();
 })
 
+
+When('I submit the organization creation form without filling mandatory fields',async()=>{
+    await organizationPage.create();
+})
+
+Then('I should see validation messages for:',async(dataTable)=>{
+    await organizationPage.showErrorMessage(dataTable);
+})

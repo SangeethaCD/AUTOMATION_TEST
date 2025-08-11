@@ -1,5 +1,6 @@
 import { Page } from "@playwright/test";
 import { utility } from "../utils/utility";
+import { DataTable } from "@cucumber/cucumber";
 
 
 export class OrganizationPage {
@@ -16,7 +17,7 @@ export class OrganizationPage {
     async sideTray() {
         await utility.checkVisibility(this.page, "//p[text()='Create Organization']");
     }
-    async filldata(dataTable) {
+    async filldata(dataTable:DataTable) {
     const data = dataTable.rowsHash();
 
     if (data.OrganizationName) {
@@ -75,5 +76,16 @@ export class OrganizationPage {
   async showCreationMessage(){
     await utility.checkVisibility(this.page,"//section[.Toastify]");
   }
+
+  async showErrorMessage(datatable:DataTable) {
+    const data = datatable.rowsHash();
+
+    for (const [field, message] of Object.entries(data)) {
+        const xpath = `//div[text()='${message}']`;
+        await utility.checkVisibility(this.page, xpath);
+    }
+}
+
+ 
 
 }
